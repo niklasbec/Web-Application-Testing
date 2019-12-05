@@ -1,5 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
+import {Howl, Howler} from 'howler';
+import ball from '../sounds/ball.mp3'
+import strike from '../sounds/strike.mp3'
+
+
+const ballSound = new Howl({
+  src: [ball]
+})
+
+const strikeSound = new Howl({
+    src: [strike]
+  })
 
 const Button = styled.button`
     display: inline-block;
@@ -19,12 +31,14 @@ function Dashboard(props) {
         props.setStrikes(s => 
             s + 1
         )
+        strikeSound.play()
     }
 
     function ball () {
         props.setBalls(b => 
             b + 1
         )
+        ballSound.play()
     }
 
     function hit () {
