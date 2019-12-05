@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 
 function Scoreboard(props) {
-    const [balls, setBalls] = useState()
-    const [strikes, setStrikes] = useState()
 
   return (
     <div className="App">
